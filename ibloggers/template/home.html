@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<!-- Owl Carousel slider -->
+<div class="container-custom">
+    <!-- Set up your HTML -->
+    <div class="owl-carousel">
+        {% for cat in categorys %}
+        <div class="card item" >
+            <div class="img-container">
+                <img src="/media/{{cat.image}}" class="responsive-img" alt="">
+            </div>
+            <div class="card-content">
+                <div class="card-tittles" style="margin-left: 4px;">
+                    {{cat.tittle}}
+                </div>
+                <p class="truncate">{{cat.description}}}</p>
+                <div class="container center-align">
+                    <a href="/category/{{cat.url}}" class="btn colors" >Read</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    <br>
+    <br>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            {% for p in posts %}
+            <div class="row">
+                <div class="col s12 m8">
+                    {{p.content | truncatewords_html:60 | safe }}
+                    <a href="/startibloggers/{{p.url}}" class="btn colors">Read More</a>
+                </div>
+                <div class="col s12 m4">
+                    <img src="/media/{{p.image}}" class="responsive-img" alt="">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>>
+{% endblock %}

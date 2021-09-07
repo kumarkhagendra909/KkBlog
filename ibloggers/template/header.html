@@ -1,0 +1,21 @@
+<!-- using materializercss for adding the header to our page -->
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+    {% for cat in categorys %}
+    <li><a href="/category/{{cat.url}}">{{cat.tittle}}</a></li>
+    {% endfor %}
+</ul>
+<nav>
+    <div class="container colors">
+        <div class="nav-wrapper">
+            <a href="/home" class="brand-logo">KkBLOG</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/about">About</a></li>
+                <li><a href="/admin">Admin</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Category<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
